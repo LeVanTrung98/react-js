@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a:link {
+    text-decoration: none;
+  }
+  
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-y: hidden;
+  }
+  
+  .header {
+    width: 100%;
+    height: 60px;
+    background-color: #222f3f;
+  }
+  .header .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
+  .header .container .ic-logo img {
+    width: 40px;
+    height: 40px;
+  }
+  .header .container .ic-logo, .header .container h1 {
+    margin-right: 10px;
+  }
+  .header .container .logo {
+    font-weight: 700;
+    color: white;
+    font-size: 30px;
+  }
+  .header .container .inp-search {
+    width: 100%;
+    height: 35px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-indent: 10px;
+    outline: none;
+    position: absolute;
+  }
+  .header .container .inp-search::placeholder {
+    text-indent: 10px;
+    font-size: 14px;
+    color: #656565;
+  }
+  .header .container .btn-search {
+    width: 80px;
+    height: 35px;
+    background-color: #ffbe61;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    right: 0;
+    outline: none;
+  }
+  .header .container .form-search {
+    position: relative;
+    width: 350px;
+    height: 35px;
+  }
+  
+  main {
+    display: flex;
+    justify-content: space-between;
+  }
+  main .left {
+    width: 15vw;
+    height: 90vh;
+    overflow-y: scroll;
+  }
+  main .left .container {
+    width: 80%;
+    margin: auto;
+  }
+  main .left .clear {
+    display: flex;
+    align-items: center;
+    padding: 7px 20px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  main .left .clear p {
+    font-size: 1.2em;
+    margin-left: 5px;
+  }
+  main .left .category {
+    margin-top: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ebebeb;
+  }
+  main .left .category__title, main .left .refine__title, main .left .category .refine__title {
+    color: #888888;
+    font-size: 1.2em;
+  }
+  main .left .category__list {
+    list-style: none;
+    margin-top: 5px;
+  }
+  main .left .category__list-sub-menu {
+    margin-left: 10px;
+  }
+  main .left .category__link {
+    color: #333333;
+    font-size: 13px;
+  }
+  main .left .category__link i {
+    font-size: 0.6em;
+  }
+  main .left .category__item {
+    padding: 2.5px 0;
+  }
+  main .left .refine {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebebeb;
+  }
+  main .left .refine__title {
+    display: block;
+  }
+  main .left .refine__title--format {
+    color: black !important;
+    font-weight: 700;
+    margin: 15px 0 10px;
+  }
+  main .left .refine__form .form-group {
+    margin-bottom: 7px;
+  }
+  main .left .refine__form .form-group-format {
+    position: relative;
+    width: 100%;
+    height: 30px;
+  }
+  main .left .refine__form .form-group-format .refine__inp-search {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ebebeb;
+    z-index: 1;
+    border-radius: 5px;
+    outline: none;
+    text-indent: 22px;
+  }
+  main .left .refine__form .form-group-format .refine__inp-search::placeholder {
+    text-indent: 22px;
+  }
+  main .left .refine__form .form-group-format i {
+    position: absolute;
+    left: 4%;
+    top: 25%;
+    transform: translate(-25%, -4%);
+    z-index: 2;
+    font-size: 16px;
+    color: #337ab7;
+  }
+  main .left .refine .rating {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  main .left .refine .rating i {
+    font-size: 8px;
+    color: #fbae00;
+  }
+  main .left .refine__rating-block {
+    padding: 5px 0;
+  }
+  main .left .refine__price--format {
+    display: block;
+    font-size: 1.1em;
+  }
+  main .left .refine__price-inp {
+    width: 50px;
+    height: 25px;
+    outline: none;
+    margin-top: 10px;
+  }
+  main .left .refine__price-group {
+    width: 100%;
+  }
+  main .left .refine__price-group input[type=submit] {
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    float: right;
+    outline: none;
+    margin-top: 5px;
+    display: block;
+    cursor: pointer;
+  }
+  main .left .refine__price-group .btn-submit {
+    width: 100%;
+    height: 25px;
+    display: block;
+  }
+  main .left .refine__price .form-group, main .left .refine__price p {
+    display: inline-block;
+  }
+  main .left .coppy-right {
+    padding: 20px 0;
+  }
+  main .right {
+    width: 84vw;
+    height: 90vh;
+    overflow-y: scroll;
+  }
+  main .right__top {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
+  main .right__show-result, main .left .refine__number, main .right__title {
+    color: #777;
+  }
+  main .right__filter {
+    margin-left: auto;
+  }
+  main .right__content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  main .right .product {
+    width: 24%;
+    border: 1px solid #ebebeb;
+    padding: 20px 15px 30px 15px;
+  }
+  main .right .product__img {
+    height: 150px;
+    width: 225px;
+    margin-bottom: 10px;
+  }
+  main .right .product__name {
+    font-weight: 700;
+    font-size: 0.8em;
+    color: black;
+  }
+  main .right .product__type {
+    color: #a2a2a2;
+    display: block;
+    margin: 15px 0;
+  }
+  main .right .product__rating {
+    display: inline-block;
+  }
+  main .right .product__rating i {
+    color: #fbae00;
+  }
+  main .right .product__price {
+    color: #333333;
+    font-weight: 700;
+    font-size: 1.4em;
+    float: right;
+  }
+  main .right .pagination {
+    background-color: #eeeeee;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 15px;
+  }
+  main .right .pagination__list {
+    width: max-content;
+    margin: auto;
+  }
+  main .right .pagination__item {
+    display: inline-block;
+    padding: 0 5px;
+  }
+  main .right .pagination__link {
+    font-size: 1.5em;
+    color: #0063c3;
+  }
+  main .right .pagination__link--active {
+    color: black;
+  }
+  
+  /*# sourceMappingURL=custom.css.map */
+  

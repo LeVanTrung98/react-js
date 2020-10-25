@@ -1,0 +1,494 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Amazon - Fire TV Stick with Alexa Voice Remote 1",
+      "rate": 4,
+      "price" : 29.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/4744600_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  5
+    },
+    {
+      "id": 2,
+      "name": "Insignia™ - 4 Mini Fan - Caviar Black",
+      "rate": 4,
+      "price" : 9.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/4711100_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  6
+    },
+    {
+      "id": 3,
+      "name": "Insignia™ - 12 Retro Table Fan - Copper",
+      "rate": 4,
+      "price" : 29.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/1345107_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  7
+    },
+    {
+      "id": 4,
+      "name": "Honeywell - Table Air Circulator Fan - Black",
+      "rate": 4,
+      "price" : 19.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/9643594_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  5
+    },
+    {
+      "id": 5,
+      "name": "Insignia™ - 4 Mini Fan - True Red",
+      "rate": 4,
+      "price" : 39.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/4711004_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  6
+    },
+    {
+      "id": 6,
+      "name": "Insignia™ - 9 Table Fan - Gray",
+      "rate": 4,
+      "price" : 29.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/4744800_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  7
+    },
+    {
+      "id": 7,
+      "name": "Insignia™ - 9 Table Fan - Blue",
+      "rate": 4,
+      "price" : 14.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/3861036_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  7
+    },
+    {
+      "id": 8,
+      "name": "Insignia™ - 10 Table Fan - Black",
+      "rate": 4,
+      "price" : 39.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/4711000_sb.jpg",
+      "category_id" : 2,
+      "type" : 5,
+      "brand" :  6
+    },
+    {
+      "id": 9,
+      "name": "Holmes - 20 Box Fan - White",
+      "rate": 4,
+      "price" : 49.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/4711000_sb.jpg",
+      "category_id" : 2,
+      "type" : 5,
+      "brand" :  5
+    },
+    {
+      "id": 10,
+      "name": "Dyson - AM07 Tower Fan - White/Silver",
+      "rate": 4,
+      "price" : 29.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/3705014_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  6
+    },
+    {
+      "id": 11,
+      "name": "Insignia™ - 9 Table Fan - Mint",
+      "rate": 4,
+      "price" : 29.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/4744702_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  6
+    },
+    {
+      "id": 12,
+      "name": "Honeywell - QuietSet 13 Personal Fan - Black",
+      "rate": 4,
+      "price" : 29.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/3799048_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  8
+    },
+    {
+      "id": 13,
+      "name": "Honeywell - QuietSet 16 Stand Fan - Black",
+      "rate": 4,
+      "price" : 69.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/1496044_sb.jpg",
+      "category_id" : 2,
+      "type" : 5,
+      "brand" :  9
+    },
+    {
+      "id": 14,
+      "name": "Dyson - AM06 Desk Fan - Black/Nickel1",
+      "rate": 4,
+      "price" : 39.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/3704015_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  9
+    },
+    {
+      "id": 15,
+      "name": "Vornado - FIT 6 Personal Fan - Pink",
+      "rate": 4,
+      "price" : 9.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/5026500_sb.jpg",
+      "category_id" : 2,
+      "type" : 4,
+      "brand" :  8
+    },
+    {
+      "id": 16,
+      "name": "Vornado - 660 Air Circulator - Black",
+      "rate": 4,
+      "price" : 29.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/7091214_220x260_sb.jpg",
+      "category_id" : 2,
+      "type" : 5,
+      "brand" :  7
+    },
+    {
+      "id": 17,
+      "name": "Bionaire - Tower Fan - Black",
+      "rate": 4,
+      "price" : 79.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/5473100_rb.jpg",
+      "category_id" : 3,
+      "type" : 4,
+      "brand" :  5
+    },
+    {
+      "id": 18,
+      "name": "Bionaire - Tower Fan - Black",
+      "rate": 4,
+      "price" : 79.99,
+      "img" : "https://cdn-demo.algolia.com/bestbuy-0118/5473100_rb.jpg",
+      "category_id" : 2,
+      "type" : 5,
+      "brand" :  8
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Appliances",
+      "parent_id": 1,
+      "root_id" : 1
+    },
+    {
+      "id": 2,
+      "name": "Fans",
+      "parent_id": 1,
+      "root_id" : 1
+    },
+    {
+      "id": 15,
+      "name": "Microwaves",
+      "parent_id": 1,
+      "root_id" : 1
+    },
+    { 
+      "id": 16,
+      "name": "Small Kitchen",
+      "parent_id": 1,
+      "root_id" : 1
+    },
+    {
+      "id": 3,
+      "name": "Celling Fans",
+      "parent_id": 2,
+      "root_id" : 1
+    },
+    {
+      "id": 4,
+      "name": "Audio",
+      "parent_id": 4,
+      "root_id" : 4
+    },
+    {
+      "id": 41,
+      "name": "Audio - 1",
+      "parent_id": 4,
+      "root_id" : 4
+    },
+    {
+      "id": 42,
+      "name": "Audio - 2",
+      "parent_id": 4,
+      "root_id" : 4
+    },
+    {
+      "id": 43,
+      "name": "Audio - 2 - 1",
+      "parent_id": 42,
+      "root_id" : 4
+    },
+    {
+      "id": 44,
+      "name": "Audio - 1 - 1",
+      "parent_id": 41,
+      "root_id" : 4
+    },
+    {
+      "id": 5,
+      "name": "Camaras & Camcorder",
+      "parent_id": 5,
+      "root_id" : 5
+    },
+    {
+      "id": 51,
+      "name": "Camaras - child - 1",
+      "parent_id": 5,
+      "root_id" : 5
+    },
+    {
+      "id": 52,
+      "name": "Camaras child - 2",
+      "parent_id": 5,
+      "root_id" : 5
+    },
+    {
+      "id": 6,
+      "name": "Car Electronics & GPS",
+      "parent_id": 6,
+      "root_id" : 6
+    },
+    {
+      "id": 7,
+      "name": "Cell Phone",
+      "parent_id": 7,
+      "root_id" : 7
+    },
+    {
+      "id": 8,
+      "name": "Computers & Tablets",
+      "parent_id": 8,
+      "root_id" : 8
+    },
+    {
+      "id": 9,
+      "name": "Health, Fitness & Beaty",
+      "parent_id": 9,
+      "root_id" : 9
+    },
+    {
+      "id": 10,
+      "name": "Offices & Scholl Supplies",
+      "parent_id": 10,
+      "root_id" : 10
+    },
+    {
+      "id": 12,
+      "name": "Offices & Scholl Supplies",
+      "parent_id": 2,
+      "root_id" : 1
+    },
+    
+    {
+      "id": 14,
+      "name": "Offices & Scholl Supplies 12",
+      "parent_id": 15,
+      "root_id" : 1
+    },
+
+    {
+      "id": 26,
+      "name": "Refrigerators",
+      "parent_id": 1,
+      "root_id" : 1
+    },
+    {
+      "id": 261,
+      "name": "Kitchen Gadgets",
+      "parent_id": 26,
+      "root_id" : 1
+    },
+    {
+      "id": 25,
+      "name": "Microwaves",
+      "parent_id": 1,
+      "root_id" : 1
+    },
+    {
+      "id": 251,
+      "name": "Food Processors",
+      "parent_id": 25,
+      "root_id" : 1
+    },
+    {
+      "id": 24,
+      "name": "Humidifiers",
+      "parent_id": 1,
+      "root_id" : 1
+    },
+    {
+      "id": 241,
+      "name": "Deep Fryers",
+      "parent_id": 24,
+      "root_id" : 1
+    },
+    {
+      "id": 23,
+      "name": "Heaters",
+      "parent_id": 1,
+      "root_id" : 1
+    },
+    {
+      "id": 231,
+      "name": "Cookware",
+      "parent_id": 23,
+      "root_id" : 1
+    },
+    {
+      "id": 22,
+      "name": "Freezers & Ice Makers",
+      "parent_id": 1,
+      "root_id" : 1
+    },
+    {
+      "id": 221,
+      "name": "Coffee, Tea & Espresso",
+      "parent_id": 22,
+      "root_id" : 1
+    },
+    {
+      "id": 21,
+      "name": "Dishwashers",
+      "parent_id": 1,
+      "root_id" : 1
+    },
+    {
+      "id": 211,
+      "name": "Blenders & Juicers",
+      "parent_id": 21,
+      "root_id" : 1
+    }
+  ],
+  "brand" : [
+    {
+      "id" : 1,
+      "name" : "GE",
+      "category_id" : 1 
+    },
+    {
+      "id" : 2,
+      "name" : "KitchenAid",
+      "category_id" : 1 
+    },
+    {
+      "id" : 3,
+      "name" : "Frigidaire",
+      "category_id" : 1 
+    },
+    {
+      "id" : 4,
+      "name" : "Samsung",
+      "category_id" : 1 
+    },
+    {
+      "id" : 5,
+      "name" : "Honeywell",
+      "category_id" : 2 
+    },
+    {
+      "id" : 6,
+      "name" : "Insignia™",
+      "category_id" : 2 
+    },
+    {
+      "id" : 7,
+      "name" : "Vornado",
+      "category_id" : 2 
+    },
+    {
+      "id" : 8,
+      "name" : "Hunter",
+      "category_id" : 2 
+    },
+    {
+      "id" : 9,
+      "name" : "Lasko",
+      "category_id" : 2 
+    },
+    {
+      "id" : 10,
+      "name" : "Bowers & Wilkins",
+      "category_id" : 5 
+    },
+    {
+      "id" : 11,
+      "name" : "Sony",
+      "category_id" : 5 
+    },
+    {
+      "id" : 12,
+      "name" : "Sony",
+      "category_id" : 5 
+    }
+  ],
+  "type" : [
+    {
+      "id" : 1,
+      "name" : "Coffee/cappuccino",
+      "category_type" : 1 
+    },
+    {
+      "id" : 2,
+      "name" : "Dishwasher",
+      "category_type" : 1 
+    },
+    {
+      "id" : 3,
+      "name" : "Food",
+      "category_type" : 1 
+    },
+    {
+      "id" : 4,
+      "name" : "French door refri",
+      "category_type" : 2 
+    },
+    {
+      "id" : 5,
+      "name" : "Blenders",
+      "category_type" : 2 
+    },
+    {
+      "id" : 10,
+      "name" : "On ear headphones",
+      "category_type" : 4 
+    },
+    {
+      "id" : 6,
+      "name" : "Wireless on/over ear",
+      "category_type" : 4 
+    },
+    {
+      "id" : 7,
+      "name" : "Earbud headphones",
+      "category_type" : 4 
+    },
+    {
+      "id" : 8,
+      "name" : "Wireless in ears",
+      "category_type" : 4 
+    },
+    {
+      "id" : 9,
+      "name" : "Wireless speakers",
+      "category_type" : 4 
+    }
+  ]
+}

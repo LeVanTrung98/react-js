@@ -1,0 +1,5 @@
+{
+    "/brand/:category": "/brand?category_id=:category",
+    "/type/:category": "/type?category_type=:category",
+    "/products/:category": "/products?category_id=:category"
+}
