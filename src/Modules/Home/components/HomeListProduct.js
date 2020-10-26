@@ -14,38 +14,32 @@ export default function HomeListProduct(props) {
     const [typeSort, setTypeSort] = useState(3);
     const [cateSelect, setCateSelect] = useState([{type : []}, {category : {}}, {brand : []}]);
 
-    // function Url(category, type, brand,curentPage){
-    //     return `products/${category}&type=${type}&brand=${brand}&_page=${curentPage}&_limit=16`;
-    // }
-
-    // function GetUrl(fn, values){
-    //     return function(...vals){
-    //         return fn(values, ...vals);
-    //     };
-    // }
-    const GetURL = (curentPage, cate, types, brands) => {
+    const GetURL = (curentPage, cate, types, brands, stars, prices) => {
         let url = '';
-        if(!types.length && !brands.length){
-            url = `products/${parseInt(cate.category)}&_page=${curentPage}&_limit=16`;
-        } else if(types.length && !brands.length) {
-            let value = types.reduce((result, item) => {
-                return result += `&type=${parseInt(item.type)}`;
-            }, "");
-            url = `products/${parseInt(cate.category)}${value}&_page=${curentPage}&_limit=16`;
-        }  else if(!types.length && brands.length) {
-            let value = brands.reduce((result, item) => {
-                return result += `&brand=${parseInt(item.brand)}`;
-            }, "");
-            url = `products/${parseInt(cate.category)}${value}&_page=${curentPage}&_limit=16`;
-        } else if(types.length && brands.length) {
-            let value = types.reduce((result, item) => {
-                return result += `&type=${parseInt(item.type)}`;
-            }, ""); 
-            let valueBrand = brands.reduce((result, item) => {
-                return result += `&brand=${parseInt(item.brand)}`;
-            }, ""); 
-            url = `products/${parseInt(cate.category)}${value}${valueBrand}&_page=${curentPage}&_limit=16`;
-        } 
+        let type = types.length > 0 ? types.reduce((result, item) => {
+            return result += `&type=${parseInt(item.type)}`;
+        }, "") : "";
+        let brand = brands.length > 0 ? brands.reduce((result, item) => {
+            return result += `&brand=${parseInt(item.brand)}`;
+        }, "") : "";
+        let star = stars ? `&rate=${stars}` : "";
+        let [price1, price2] = prices ? prices.split(",") : '';
+        let price;
+        if(price1 == "1" && !price2){
+            price = `&price_lte=${price1 ? price1 : []}`;
+        } else if (price1 == "4981" && !price2){
+            price = `&price_gte=${price1 ? price1 : []}`;
+        }else {
+            price = `&price_gte=${price1 ? price1 : []}${price2 ? `&price_lte=${price2}` : []}`;
+        }
+        let category_id ="?category_id=";
+        if(cate.length) {
+            category_id += cate.join("&category_id=");
+        } else {
+            category_id = "";
+        }
+        url = `products${category_id}${category_id ? type : type.replace("&", "?")}${ (category_id || type) ? brand : brand.replace("&", "?")}${(category_id  || type || brand) ? star : star.replace("&", "?")}${(category_id  || type || brand || star) ? price : price.replace("&", "?")}${ (category_id || type || brand || star || price) ? "&" : "?"}_page=${curentPage}&_limit=16`;
+                               
         return url;
     }
     
@@ -54,13 +48,17 @@ export default function HomeListProduct(props) {
             let category = props.cateChange[1]['category'];
             let type = props.cateChange[0]['type'];
             let brand = props.cateChange[2]['brand'];
+            let star = props.cateChange[3]['star']?.star;
+            let price = props.cateChange[4]['price']?.price;
             setCateSelect([ type, category, brand ]);
-            let url = GetURL(curentPage, category, type, brand);
+
+            let url = GetURL(curentPage, category, type, brand, star, price);
             ( 
                 async () => {
                     try {
                         await FetchData(url)().then(res => {
-                            setProducts(res.data);
+                            let sort = sortProducts(typeSort, res.data);
+                            setProducts(sort);
                             setTotalProducts(parseInt(res.headers["x-total-count"]));
                         });
                         await FetchData(`type`)().then(res => setBrand(res.data));
@@ -98,7 +96,6 @@ export default function HomeListProduct(props) {
     }
     const handleChangePage = async (value) => {
         // let idCategory = filter[filter.length - 1]["category"];
-        console.log(cateSelect)
         let category = cateSelect[1]["category"];
         let type = cateSelect[0]["type"];
         let brand = cateSelect[2]["brand"];
@@ -174,23 +171,23 @@ export default function HomeListProduct(props) {
                                         <i className="fas fa-star" />
                                         <i className="fas fa-star" />
                                         <i className="fas fa-star" />
-                                        <i className="fas fa-star-half-alt" />
+                                        <i className="far fa-star"></i>
                                     </div>
                                 ) : item.rate === 3 ? (
                                     <div className="product__rating">
                                         <i className="fas fa-star" />
                                         <i className="fas fa-star" />
                                         <i className="fas fa-star" />
-                                        <i className="fas fa-star-half-alt" />
-                                        <i className="fas fa-star-half-alt" />
+                                        <i className="far fa-star"></i>
+                                        <i className="far fa-star"></i>
                                     </div>
                                 ) : (
                                     <div className="product__rating">
                                         <i className="fas fa-star" />
                                         <i className="fas fa-star" />
-                                        <i className="fas fa-star-half-alt" />
-                                        <i className="fas fa-star-half-alt" />
-                                        <i className="fas fa-star-half-alt" />
+                                        <i className="far fa-star"></i>
+                                        <i className="far fa-star"></i>
+                                        <i className="far fa-star"></i>
                                     </div>
                                 )
                             }
@@ -199,15 +196,15 @@ export default function HomeListProduct(props) {
                                 ${item.price}
                             </span>
                         </div>
-                    )) : <div>không có sản phẩm phù hợp</div>
+                    )) : <div className="no-product">không có sản phẩm phù hợp</div>
                     
                 }
               
             </section>
             {
-                (totalProducts ) && (
+                (totalProducts ) ? (
                     <Pagination handleChangePages={ handleChangePage } numberProducts={ totalProducts } curentPage={ curentPage } />
-                ) 
+                ) : null
             }
         </div>
     )

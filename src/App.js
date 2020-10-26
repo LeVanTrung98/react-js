@@ -12,7 +12,7 @@ function App(props) {
 	const [brand, setBrand] = useState("");
 	const [type, setType] = useState("");
 	const [products, setProducts] = useState("");
-	const [childCateHander, setChildCateHander] = useState([{type : []}, {category : {}}, {brand : []}]);
+	const [childCateHander, setChildCateHander] = useState([{type : []}, {category : {}}, {brand : []}, {star : ""}, {price : ""} ]);
 	
 	useEffect(() => {
 		(async () => {
@@ -41,7 +41,8 @@ function App(props) {
 		}else if(key === "category") {
 			val[0].type = [];
 			val[2].brand = [];
-			val[1].category = value;
+			val[3].star = "";
+			val[1].category = value.category;
 		}
 		else if(key === "brand") {
 			let brand =val[2].brand;
@@ -51,6 +52,12 @@ function App(props) {
 			} else {
 				val[2].brand.splice(check,1);
 			}
+		}
+		else if(key === "star"){
+			val[3].star = value;
+		}
+		else if(key === "price"){
+			val[4].price = value;
 		}
 		setChildCateHander(val);
 

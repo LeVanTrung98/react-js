@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Amazon - Fire TV Stick with Alexa Voice Remote 1",
-      "rate": 4,
+      "rate": 3,
       "price" : 29.99,
       "img" : "https://cdn-demo.algolia.com/bestbuy-0118/4744600_sb.jpg",
       "category_id" : 2,
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "name": "Insignia™ - 12 Retro Table Fan - Copper",
-      "rate": 4,
+      "rate": 2,
       "price" : 29.99,
       "img" : "https://cdn-demo.algolia.com/bestbuy-0118/1345107_sb.jpg",
       "category_id" : 2,
@@ -33,7 +33,7 @@
     {
       "id": 4,
       "name": "Honeywell - Table Air Circulator Fan - Black",
-      "rate": 4,
+      "rate": 3,
       "price" : 19.99,
       "img" : "https://cdn-demo.algolia.com/bestbuy-0118/9643594_sb.jpg",
       "category_id" : 2,
@@ -43,7 +43,7 @@
     {
       "id": 5,
       "name": "Insignia™ - 4 Mini Fan - True Red",
-      "rate": 4,
+      "rate": 3,
       "price" : 39.99,
       "img" : "https://cdn-demo.algolia.com/bestbuy-0118/4711004_sb.jpg",
       "category_id" : 2,
@@ -63,7 +63,7 @@
     {
       "id": 7,
       "name": "Insignia™ - 9 Table Fan - Blue",
-      "rate": 4,
+      "rate": 2,
       "price" : 14.99,
       "img" : "https://cdn-demo.algolia.com/bestbuy-0118/3861036_sb.jpg",
       "category_id" : 2,
@@ -103,7 +103,7 @@
     {
       "id": 11,
       "name": "Insignia™ - 9 Table Fan - Mint",
-      "rate": 4,
+      "rate": 2,
       "price" : 29.99,
       "img" : "https://cdn-demo.algolia.com/bestbuy-0118/4744702_sb.jpg",
       "category_id" : 2,

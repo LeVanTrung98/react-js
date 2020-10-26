@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import { useState, useEffect } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import TreeView from '@material-ui/lab/TreeView';
@@ -18,7 +18,6 @@ export default function HomeFilter(props) {
     const classes = useStyles();
     const [categories, setCategories] = useState([]);
     const [clear, setClear] = useState(false);
-    const [typeCheck, setTypeCheck] = useState([])
     const [brand, setBrand] = useState([]);
     const [types, setTypes] = useState([]);
     let map = new Map();
@@ -83,7 +82,6 @@ export default function HomeFilter(props) {
         </TreeItem>
     );
     const handleChange =( async (event, nodes) =>{
-        let text = event.target.textContent;
         event.preventDefault();
         let idCategory = nodes;
         let dataBrand = FetchData(`brand/${idCategory}`);
@@ -96,8 +94,31 @@ export default function HomeFilter(props) {
             setTypes(response[1].data)
         })
         setClear(true);
-        props.hander({'category' : nodes});
+        
+        // get category itself, children
+        let data = props.categories && JSON.parse(props.categories);
+        let rootId = new Set();
+        data.map(item => rootId.add(item.root_id));
+        let getChildId;
+        if(rootId.has(parseInt(nodes))){
+            getChildId = data.reduce((result,item) => {
+                if(item.root_id == nodes){
+                    result.push(item.id);
+                }
+                return result;
+            },[]);
+        }else{
+            getChildId = data.reduce((result,item) => {
+                if(item.parent_id == nodes){
+                    result.push(item.id);
+                }
+                return result;
+            },[parseInt(nodes)]);
+        }
+        props.hander({'category' : getChildId});
+
     })
+
     const handClickClear = ((event) => {
         event.preventDefault();
     });
@@ -113,7 +134,17 @@ export default function HomeFilter(props) {
         // check ? storeCheckType.delete(valueCheck) :  storeCheckType.add(valueCheck);
 
     }
+    const handleClickStar = (event) => {
+        event.preventDefault();
+        let data = event.target.getAttribute("data-id");
+        props.hander({ "star" : data})
+    }
 
+    const handleClickPrice = (event) => {
+        event.preventDefault();
+        let data = event.target.getAttribute("data-id");
+        props.hander({ "price" : data})
+    }
     useEffect(() => {
         (async () => {
             await Promise.all([
@@ -166,7 +197,7 @@ export default function HomeFilter(props) {
                                         types.map(item => (
                                             <div className="form-group" key={ item.id }>
                                                 <input type="checkbox"  onChange={ handleSelectType } id={"types"+item.id} value={ item.id } name="type" />
-                                                <label htmlFor={"types"+item.id}>{ item.name }<span className="refine__number"> (132)</span></label>
+                                                <label htmlFor={"types"+item.id}>{ item.name }</label>
                                             </div>
                                         ))
                                     }
@@ -187,7 +218,7 @@ export default function HomeFilter(props) {
                                         brand.map(item => (
                                             <div className="form-group" key={item.id}>
                                                 <input type="checkbox" onChange={ handleSelectType } id={"brand"+item.id} value={item.id} name="brand" />
-                                                <label htmlFor={"brand"+item.id}>{item.name}<span className="refine__number"> (132)</span></label>
+                                                <label htmlFor={"brand"+item.id}>{item.name}</label>
                                             </div>
                                         ))
                                     }
@@ -197,70 +228,74 @@ export default function HomeFilter(props) {
                     }
                     <div className="refine__rating">
                         <span className="refine__title refine__title--format">Ratings</span>
-                        <div className="refine__rating-block">
-                            <div className="rating">
-                                <i className="fas fa-star" />
-                                <i className="fas fa-star" />
-                                <i className="fas fa-star" />
-                                <i className="fas fa-star" />
-                                <i className="far fa-star" />
-                            </div>
-                            <span>&amp; Up 16, 075</span>
+                        <div className="refine__rating-block" >
+                            <a href="true" onClick={ handleClickStar } data-id="4" className="rating">
+                                <i className="fas fa-star" data-id="4" />
+                                <i className="fas fa-star" data-id="4" />
+                                <i className="fas fa-star" data-id="4" />
+                                <i className="fas fa-star" data-id="4" />
+                                <i className="far fa-star" data-id="4" />
+                                &nbsp;
+                                <span data-id="4">&amp; Up 16, 075</span>
+                            </a>
                         </div>
                         <div className="refine__rating-block">
-                            <div className="rating">
-                                <i className="fas fa-star" />
-                                <i className="fas fa-star" />
-                                <i className="fas fa-star" />
-                                <i className="far fa-star" />
-                                <i className="far fa-star" />
-                            </div>
-                            <span>&amp; Up 16, 075</span>
+                            <a href="true" onClick={ handleClickStar } data-id="3"  className="rating">
+                                <i className="fas fa-star" data-id="3"/>
+                                <i className="fas fa-star" data-id="3"/>
+                                <i className="fas fa-star" data-id="3"/>
+                                <i className="far fa-star" data-id="3"/>
+                                <i className="far fa-star" data-id="3"/>
+                                &nbsp;
+                                <span data-id="3">&amp; Up 16, 075</span>
+                            </a>
                         </div>
                         <div className="refine__rating-block">
-                            <div className="rating">
-                                <i className="fas fa-star" />
-                                <i className="fas fa-star" />
-                                <i className="far fa-star" />
-                                <i className="far fa-star" />
-                                <i className="far fa-star" />
-                            </div>
-                            <span>&amp; Up 16, 075</span>
+                            <a href="true" onClick={ handleClickStar } data-id="2" className="rating">
+                                <i className="fas fa-star" data-id="2"/>
+                                <i className="fas fa-star" data-id="2"/>
+                                <i className="far fa-star" data-id="2"/>
+                                <i className="far fa-star" data-id="2"/>
+                                <i className="far fa-star" data-id="2"/>
+                                &nbsp;
+                                <span data-id="2">&amp; Up 16, 075</span>
+                            </a>
                         </div>
                         <div className="refine__rating-block">
-                            <div className="rating">
-                                <i className="fas fa-star" />
-                                <i className="far fa-star" />
-                                <i className="far fa-star" />
-                                <i className="far fa-star" />
-                                <i className="far fa-star" />
-                            </div>
-                            <span>&amp; Up 16, 075</span>
+                            <a href="true" onClick={ handleClickStar } data-id="1" className="rating">
+                                <i className="fas fa-star" data-id="1"/>
+                                <i className="far fa-star" data-id="1"/>
+                                <i className="far fa-star" data-id="1"/>
+                                <i className="far fa-star" data-id="1"/>
+                                <i className="far fa-star" data-id="1"/>
+                                &nbsp;
+                                <span data-id="1">&amp; Up 16, 075</span>
+                            </a>
                         </div>
                     </div>
                     <div className="refine__price">
-                        <span className="refine__title refine__title--format">Prices</span>
-                        <span className="refine__price--format">≤ &nbsp; 1</span>
-                        <span className="refine__price--format">$1 -80</span>
-                        <span className="refine__price--format">$80 - 160</span>
-                        <span className="refine__price--format">$160 - 240 </span>
-                        <span className="refine__price--format">$240 - 1,820 </span>
-                        <span className="refine__price--format">$1,820 - 3,400 </span>
-                        <span className="refine__price--format">$3,400 - 4,980</span>
-                        <span className="refine__price--format">≥  &nbsp; $4,980</span>
+                        <a href="true" className="refine__title refine__title--format">Prices</a>
+                        <a href="true" onClick={ handleClickPrice } data-id="1" className="refine__price--format">≤ &nbsp; 1</a>
+                        <a href="true" onClick={ handleClickPrice } data-id="2,80" className="refine__price--format">$1 - 80</a>
+                        <a href="true" onClick={ handleClickPrice } data-id="80,160" className="refine__price--format">$80 - 160</a>
+                        <a href="true" onClick={ handleClickPrice } data-id="160,240" className="refine__price--format">$160 - 240 </a>
+                        <a href="true" onClick={ handleClickPrice } data-id="240,1.820" className="refine__price--format">$240 - 1,820 </a>
+                        <a href="true" onClick={ handleClickPrice } data-id="1.820,3.400" className="refine__price--format">$1,820 - 3,400 </a>
+                        <a href="true" onClick={ handleClickPrice } data-id="3.400,4.980" className="refine__price--format">$3,400 - 4,980</a>
+                        <a href="true" onClick={ handleClickPrice } data-id="4981" className="refine__price--format">≥  &nbsp; $4,980</a>
                         <div className="refine__price-group">
                             <form action="">
                                 <div className="form-group">
                                     <label >$</label>
                                     <input type="number" className="refine__price-inp" />
                                 </div>
-                                <p>to</p>
+                                <p>&nbsp;to &nbsp;</p>
                                 <div className="form-group">
                                     <label >$</label>
                                     <input type="number" className="refine__price-inp" />
                                 </div>
                                 <div className="btn-submit">
-                                    <input type="submit" defaultValue="go" />
+                                    <input type="submit" value="Go"/>
                                 </div>
                             </form>
                         </div>
