@@ -1,0 +1,13 @@
+export const LOAD_CATEGORIES = "LOAD_CATEGORIES";
+export const LOAD_PAGES = "LOAD_PAGES";
+export const PRODUCTS = "products";
+export const CATEGORIES = "categories";
+export const TYPES = "type";
+export const BRANDS = "brand";
+export const CLICK_FILTER = "CLICK_FILTER";
+export const SORT = "SORT";
+export const UPDATE_PRODUCTS ="UPDATE_PRODUCTS";
+export const CLICK_CHANGE_PAGE ="CLICK_CHANGE_PAGE";
+export const SET_CURENT_PAGE ="SET_CURENT_PAGE";
+export const SEARCH_PRODUCTS ="SEARCH_PRODUCTS";
+export const GET_ALL_TYPES = "GET_ALL_TYPES"
